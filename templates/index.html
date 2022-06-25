@@ -1,0 +1,136 @@
+{% extends 'base.html' %}
+
+{% block head %} 
+<title>Bank Prediction</title>
+{% endblock %}
+
+{% block body %} 
+<h1 style="color:Blue;text-align: center">Health Condition Prediction</h1><br>
+<marquee style="color:red"><h3>developed by Mudassir Shaik</h3></marquee>
+<hr>
+<form action '/' method = 'POST' style="text-align: center">
+    <table style="margin-left : 35%">
+        <tr>
+            <td style="text-align:right">
+                <span class="input-group-text" for="age">Age:</span>                
+            </td>
+            <td style="text-align:left" >
+                <input type='text' name='age' placeholder="Enter your Age">
+            </td>
+        </tr>
+
+        <tr>
+            <td style="text-align:right">
+                <span class="input-group-text" for='sex'>Gender</span>
+            </td>
+            <td style="text-align:left">
+                <input type="radio" name="sex" id="sex_F" value="1"> Female </input>
+                <input type="radio" name="sex" id="sex_M" value="0"> Male </input>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="text-align:right">
+                <span class="input-group-text" for="cpt">Chest Pain Type:</span>
+            </td>
+            <td style="text-align:left">
+                <select name="cpt" id="cpt">
+                    <option value="0">ATA</option>
+                    <option value="1">NAP</option>
+                    <option value="2">ASY</option>
+                    <option value="3">TA</option>
+                </select>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="text-align:right">
+                <span class="input-group-text" for="bp">RestingBP:</span>                
+            </td>
+            <td style="text-align:left" >
+                <input type='text' name='bp' placeholder="Enter resting blood pressure">
+            </td>
+        </tr>
+
+        <tr>
+            <td style="text-align:right">
+                <span class="input-group-text" for="chol">Cholesterol:</span>                
+            </td>
+            <td style="text-align:left" >
+                <input type='text' name='chol' placeholder="Enter serum cholesterol Value">
+            </td>
+        </tr>
+
+        <tr>
+            <td style="text-align:right">
+                <span class="input-group-text" for='sugar'>Fasting Blood Sugar:</span>
+            </td>
+            <td style="text-align:left">
+                <input type="radio" name="sugar" id="sugar_yes" value="1"> Yes </input>
+                <input type="radio" name="sugar" id="sugar_no" value="0"> No </input>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="text-align:right">
+                <span class="input-group-text" for='ecg'>Resting Electrocardiogram ECG:</span>
+            </td>
+            <td style="text-align:left">
+                <input type="radio" name="ecg" id="ecg_nor" value="0"> Normal </input>
+                <input type="radio" name="ecg" id="ecg_st" value="1"> ST </input>
+                <input type="radio" name="ecg" id="ecg_lvh" value="2"> LVH </input>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="text-align:right">
+                <span class="input-group-text" for="mhr">Maximum Heart Rate:</span>                
+            </td>
+            <td style="text-align:left" >
+                <input type='text' name='mhr' placeholder="Enter maximum heart rate occured">
+            </td>
+        </tr>
+
+        <tr>
+            <td style="text-align:right">
+                <span class="input-group-text" for='ae'>Angina Exercise:</span>
+            </td>
+            <td style="text-align:left">
+                <input type="radio" name="ae" id="ae_no" value="0"> No </input>
+                <input type="radio" name="ae" id="ae_yes" value="1"> Yes </input>
+            </td>
+        </tr>
+
+        <tr>
+            <td style="text-align:right">
+                <span class="input-group-text" for="st">Oldpeak:</span>                
+            </td>
+            <td style="text-align:left" >
+                <input type='text' name='st' placeholder="Enter ST value -3 to 7">
+            </td>
+        </tr>
+
+        <tr>
+            <td style="text-align:right">
+                <span class="input-group-text" for="slope">ST_Slope</span>
+            </td>
+            <td style="text-align:left">
+                <select name="slope" id="slope">
+                    <option value="0">Up</option>
+                    <option value="1">Flat</option>
+                    <option value="2">Down</option>
+                </select>
+            </td>
+        </tr>
+    </table><br>
+
+    <button type='submit' value='submit'>&emsp; Heart Condition &emsp;</button>
+    <hr>
+    <br>
+</form>
+{% if result == 0 %}
+	<h2 style="color:Orange;text-align: center">This Patient have Heart Problem</h2>
+{% else %}
+	<h2 style="color:Green;text-align: center">This Patient have Good Health</h2>
+{% endif %}
+{% endblock %}
