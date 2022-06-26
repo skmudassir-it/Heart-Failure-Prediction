@@ -1,0 +1,1 @@
+This is an machine learning Classification project on Heart health prediction by using various inputs of the patent like age, sex, smoke, drink, BMI, Diabetics, Physical Health, Mental Health, Difficulty in Walking, Sleeping timings, Stroke Physical Activity and General Health to predict the Heart Disease	
